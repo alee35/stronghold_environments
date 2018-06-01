@@ -2,6 +2,17 @@
 
 This is BCBI's base environment. It was created from sctach
 
+## Outline
+
+* Set up environment
+	* Create empty environment
+	* Install basic system libraries
+	* Python
+	* R
+	* Julia
+* Trouble shooting comments
+
+## Set up environment
 
 ### Create Environment
 ```
