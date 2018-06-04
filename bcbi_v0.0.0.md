@@ -57,55 +57,52 @@ conda install -c r r-caret r-randomforest r-lme4 r-dplyr r-data.table r-ggplot2 
 conda install julia -c brown-data-science
 ```
 
-Setup Julia environment variables: 
-
-1. Create a script that is read by `conda activate`
-
+1. Setup Julia environment variables by ceating a script that is read by `conda activate`
 ```
 touch /opt/browncis/conda/envs/bcbi_v0.0.0/etc/conda/activate.d/set-usr-envs.sh
 ```
 
-Then add the following environment variables to that file
+2. Then add the following environment variables to that file
 
-1. `LD_LIBRARY_PATH`: This tell julia where to find binary dependencies i.e `R`
-```
-export LD_LIBRARY_PATH = /opt/browncis/conda/envs/$CONDA_DEFAULT_ENV/lib
-```
-2. `JULIA_PKGDIR`: Where all julia packages are downloaded to 
-```
-export JULIA_PKGDIR = /opt/browncis/conda/envs/$CONDA_DEFAULT_ENV/lib/julia/packages
-```
+	1. `LD_LIBRARY_PATH`: This tell julia where to find binary dependencies i.e `R`
+	```
+	export LD_LIBRARY_PATH = /opt/browncis/conda/envs/$CONDA_DEFAULT_ENV/lib
+	```
+	2. `JULIA_PKGDIR`: Where all julia packages are downloaded to 
+	```
+	export JULIA_PKGDIR = /opt/browncis/conda/envs/$CONDA_DEFAULT_ENV/lib/julia/packages
+	```
 
-3. `PYTHON`: Which python to use. We choose the default in the environment
-```
-export PYTHON = /opt/browncis/conda/envs/$CONDA_DEFAULT_ENV/bin/python
-```
-4. `CONDA_JL_HOME`: Where Conda lives 
-```
-export CONDA_JL_HOME = /opt/browncis/conda/envs/$CONDA_DEFAULT_ENV/lib/julia/packages/v0.6/Conda/deps/usr
-```  
-  
-:warning Alternatively they could be set up in `~/.juliarc.jl` but then they would only be appropiately configured for your user
-```
-ENV["JULIA_PKGDIR"] = "/opt/browncis/conda/envs/$(ENV["CONDA_DEFAULT_ENV"])/lib/julia/packages"
-ENV["PYTHON"] = "/opt/browncis/conda/envs/$(ENV["CONDA_DEFAULT_ENV"])/bin/python"
-ENV["CONDA_JL_HOME"] = "/opt/browncis/conda/envs/$(ENV["CONDA_DEFAULT_ENV"])/lib/julia/packages/v0.6/Conda/deps/usr"
-```
+	3. `PYTHON`: Which python to use. We choose the default in the environment
+	```
+	export PYTHON = /opt/browncis/conda/envs/$CONDA_DEFAULT_ENV/bin/python
+	```
+	4. `CONDA_JL_HOME`: Where Conda lives 
+	```
+	export CONDA_JL_HOME = /opt/browncis/conda/envs/$CONDA_DEFAULT_ENV/lib/julia/packages/v0.6/Conda/deps/usr
+	```  
 
-In julia's REPL
-```
-Pkg.dir() #confirm location
-Pkg.init()
-```  
-  
- :warning These environment variables also need to be the same in the workstation and therefore, when registering the environment as a PyModule you need to configure them. i.e in `/opt/conda/conda` the following block was added:
- 
- ```
- [bcbi_v0.0.0]
-set JULIA_PKGDIR = %(rootdir)s/lib/julia/packages
-set JAVA_HOME = %(rootdir)s
-set PYTHON_DIR = %(rootdir)s/bin
-set PYTHON = %(rootdir)s/bin/python 
-set CONDA_JL_HOME = %(rootdir)s/lib/julia/packages/v0.6/Conda/deps/usr
-set LD_LIBRARY_PATH = %(rootdir)s/lib
-```
+	:warning: Alternatively they could be set up in `~/.juliarc.jl` but then they would only be appropiately configured for your user
+	```
+	ENV["JULIA_PKGDIR"] = "/opt/browncis/conda/envs/$(ENV["CONDA_DEFAULT_ENV"])/lib/julia/packages"
+	ENV["PYTHON"] = "/opt/browncis/conda/envs/$(ENV["CONDA_DEFAULT_ENV"])/bin/python"
+	ENV["CONDA_JL_HOME"] = "/opt/browncis/conda/envs/$(ENV["CONDA_DEFAULT_ENV"])/lib/julia/packages/v0.6/Conda/deps/usr"
+	```
+
+	In julia's REPL
+	```
+	Pkg.dir() #confirm location
+	Pkg.init()
+	```  
+
+	 :warning: These environment variables also need to be the same in the workstation and therefore, when registering the environment as a PyModule you need to configure them. i.e in `/opt/conda/conda` the following block was added:
+
+	 ```
+	 [bcbi_v0.0.0]
+	set JULIA_PKGDIR = %(rootdir)s/lib/julia/packages
+	set JAVA_HOME = %(rootdir)s
+	set PYTHON_DIR = %(rootdir)s/bin
+	set PYTHON = %(rootdir)s/bin/python 
+	set CONDA_JL_HOME = %(rootdir)s/lib/julia/packages/v0.6/Conda/deps/usr
+	set LD_LIBRARY_PATH = %(rootdir)s/lib
+	```
