@@ -85,9 +85,9 @@ conda install julia -c brown-data-science
 	export CONDA_JL_HOME = /opt/browncis/conda/envs/$CONDA_DEFAULT_ENV/lib/julia/packages/v0.6/Conda/deps/usr
 	```  
 
-:warning: Alternatively they could be set up in `~/.juliarc.jl` but then they would only be appropiately configured for your user
+:exclamation: Alternatively they could be set up in `~/.juliarc.jl` but then they would only be appropiately configured for your user
 
-	 :warning: These environment variables also need to be the same in the workstation and therefore, when registering the environment as a PyModule you need to configure them. i.e in `/opt/conda/conda` the following block was added:
+:warning: These environment variables also need to be the same in the workstation and therefore, when registering the environment as a PyModule you need to configure them. i.e in `/opt/conda/conda` the following block was added:
 
 	 ```
 	 [bcbi_v0.0.0]
