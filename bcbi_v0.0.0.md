@@ -57,12 +57,15 @@ conda install -c r r-caret r-randomforest r-lme4 r-dplyr r-data.table r-ggplot2 
 conda install julia -c brown-data-science
 ```
 
-1. Setup Julia environment variables by ceating a script that is read by `conda activate`
-```
-touch /opt/browncis/conda/envs/bcbi_v0.0.0/etc/conda/activate.d/set-usr-envs.sh
-```
+### Setup Julia environment variables 
 
-2. Then add the following environment variables to that file
+* Create a script that is read by `conda activate`
+
+	```
+	touch /opt/browncis/conda/envs/bcbi_v0.0.0/etc/conda/activate.d/set-usr-envs.sh
+	```
+
+* Add the following environment variables to that file
 
 	1. `LD_LIBRARY_PATH`: This tell julia where to find binary dependencies i.e `R`
 	```
@@ -82,18 +85,7 @@ touch /opt/browncis/conda/envs/bcbi_v0.0.0/etc/conda/activate.d/set-usr-envs.sh
 	export CONDA_JL_HOME = /opt/browncis/conda/envs/$CONDA_DEFAULT_ENV/lib/julia/packages/v0.6/Conda/deps/usr
 	```  
 
-	:warning: Alternatively they could be set up in `~/.juliarc.jl` but then they would only be appropiately configured for your user
-	```
-	ENV["JULIA_PKGDIR"] = "/opt/browncis/conda/envs/$(ENV["CONDA_DEFAULT_ENV"])/lib/julia/packages"
-	ENV["PYTHON"] = "/opt/browncis/conda/envs/$(ENV["CONDA_DEFAULT_ENV"])/bin/python"
-	ENV["CONDA_JL_HOME"] = "/opt/browncis/conda/envs/$(ENV["CONDA_DEFAULT_ENV"])/lib/julia/packages/v0.6/Conda/deps/usr"
-	```
-
-	In julia's REPL
-	```
-	Pkg.dir() #confirm location
-	Pkg.init()
-	```  
+:warning: Alternatively they could be set up in `~/.juliarc.jl` but then they would only be appropiately configured for your user
 
 	 :warning: These environment variables also need to be the same in the workstation and therefore, when registering the environment as a PyModule you need to configure them. i.e in `/opt/conda/conda` the following block was added:
 
@@ -106,3 +98,17 @@ touch /opt/browncis/conda/envs/bcbi_v0.0.0/etc/conda/activate.d/set-usr-envs.sh
 	set CONDA_JL_HOME = %(rootdir)s/lib/julia/packages/v0.6/Conda/deps/usr
 	set LD_LIBRARY_PATH = %(rootdir)s/lib
 	```
+	
+### Init Julia's package directory
+
+In julia's REPL
+```
+Pkg.dir() #confirm location
+Pkg.init()
+```  
+
+### Install BCBI's packages 
+
+Follow [BCBI instructions](#https://github.com/bcbi/BCBI_base.jl) and remember to refer to the appropiate tag.
+
+
