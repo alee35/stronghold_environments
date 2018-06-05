@@ -109,6 +109,6 @@ Pkg.init()
 
 ### Install BCBI's packages 
 
-Follow [BCBI instructions](#https://github.com/bcbi/BCBI_base.jl) and remember to refer to the appropiate tag.
+Follow [BCBI instructions](https://github.com/bcbi/BCBI_base.jl) and remember to refer to the appropiate tag.
 
 
