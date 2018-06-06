@@ -14,6 +14,8 @@ This is BCBI's base environment. It was created from sctach
 
 ## Set up
 
+The environment was created and set up in pswbuild6cit.services.brown.edu
+
 ### Create Environment
 ```
 conda create --name bcbi_v0.0.0 python=3.6
