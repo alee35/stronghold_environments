@@ -1,6 +1,6 @@
 # BCBI_v0.0.0
 
-This is BCBI's base environment. It was created from sctach
+This is BCBI's base environment. It was created from scratch
 
 ## Outline
 
