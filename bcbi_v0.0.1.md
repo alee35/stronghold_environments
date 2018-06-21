@@ -22,3 +22,6 @@ source activate bcbi_v0.0.1
 
 ### Dependecies 
 
+```
+conda install -c brown-data-science predictmd-imagemagick predictmd-pdf2svg predictmd-texlive
+```
