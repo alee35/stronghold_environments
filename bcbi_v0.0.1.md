@@ -35,6 +35,7 @@ conda install -c brown-data-science predictmd-pdf2svg predictmd-texlive
 ### Set up Julia Packages
 
 #### Set up package directory
+
 ```
 #Confirm package dir
 Pkg.dir()
@@ -45,9 +46,15 @@ mkpath(Pkg.dir())
 Pkg.init()
 ```
 
-#### Install packages
+#### Get BCBI_base packages
 
 ```
 Pkg.clone("https://github.com/bcbi/BCBI_base.jl.git")
 Pkg.checkout("BCBI_base", "bcbi_v0.0.1")
+```
+
+#### Check PredictMD deps
+```
+using BCBI_base
+BCBI_base.add(BCBI_base.predictmd_extra_deps)
 ```
