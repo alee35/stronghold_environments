@@ -32,4 +32,14 @@ cp /opt/browncis/conda/envs/bcbi_v0.0.0/etc/conda/activate.d/set-usr-envs.s /opt
 conda install -c brown-data-science predictmd-pdf2svg predictmd-texlive
 ```
 
-### Install Julia Package
+### Set up Julia Packages
+
+```
+#Confirm package dir
+Pkg.dir()
+
+# Create dir (and path) to package directory
+mkpath(Pkg.dir())
+
+Pkg.init()
+```
