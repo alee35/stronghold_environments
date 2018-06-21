@@ -1,7 +1,7 @@
 
 # BCBI_v0.0.1
 
-Based on BCBI_v0.0.0. Added support for [PredictMD.jl](https://github.com/bcbi/PredictMD.jl)
+Based on BCBI_v0.0.0. Adding support for [PredictMD.jl](https://github.com/bcbi/PredictMD.jl)
 
 ## Outline
 
