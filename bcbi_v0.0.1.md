@@ -13,15 +13,23 @@ Based on BCBI_v0.0.0. Added support for [PredictMD.jl](https://github.com/bcbi/P
 
 ## Set up
 
-### Create environments
+### Create environment from YML
 
 ```
-conda create --name bcbi_v0.0.1 --clone bcbi_v0.0.0
+conda env create -f bcbi_v0.0.1.yml
 source activate bcbi_v0.0.1
 ```
 
-### Dependecies 
+### Set up environment variables
 
 ```
-conda install -c brown-data-science predictmd-imagemagick predictmd-pdf2svg predictmd-texlive
+cp /opt/browncis/conda/envs/bcbi_v0.0.0/etc/conda/activate.d/set-usr-envs.s /opt/browncis/conda/envs/bcbi_v0.0.1/etc/conda/activate.d/set-usr-envs.sh
 ```
+
+### ~Extra Dependencies~ 
+
+```
+conda install -c brown-data-science predictmd-pdf2svg predictmd-texlive
+```
+
+### Install Julia Package
