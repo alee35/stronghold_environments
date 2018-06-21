@@ -1,0 +1,41 @@
+name: bcbi_v0.0.1
+channels:
+  - brown-data-science
+  - r
+  - conda-forge
+  - defaults
+dependencies:
+  - defaults::python=3.6
+  - defaults::gcc
+  - defaults::libgcc
+  - defaults::git
+  - defaults::hdf5
+  - defaults::numpy
+  - defaults::scipy
+  - defaults::matplotlib
+  - defaults::jupyter
+  - defaults::seaborn
+  - defaults::pandas  
+  - defaults::scikit-learn
+  - defaults::statsmodels
+  - conda-forge::plotnine
+  - conda-forge::xgboost
+  - conda-forge::spacy
+  - r::r-base=3.4.3
+  - r::r-caret
+  - r::r-randomforest
+  - r::r-lme4
+  - r::r-dplyr
+  - r::r-data.table
+  - r::r-ggplot2
+  - r::r-tidyr 
+  - r::r-stringr 
+  - r::r-glmnet 
+  - r::r-survival 
+  - r::r-devtools 
+  - r::r-car 
+  - r::r-lubridate 
+  - r::r-rmysql
+  - brown-data-science::julia=0.6.2
+prefix: /opt/browncis/conda/envs/bcbi_v0.0.1
+
