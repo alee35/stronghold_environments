@@ -6,3 +6,7 @@ channels:
   - defaults
 dependencies:
   - defaults::python=3.6
+prefix: /opt/browncis/conda/envs/bcbi_v0.0.1
+environment:
+  LD_LIBRARY_PATH:
+  - $PREFIX/lib
