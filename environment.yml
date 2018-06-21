@@ -1,1 +1,6 @@
 name: bcbi_v0.0.1
+channels:
+  - brown-data-science
+  - r
+  - conda-forge
+  - defaults
