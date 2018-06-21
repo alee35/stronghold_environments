@@ -4,3 +4,5 @@ channels:
   - r
   - conda-forge
   - defaults
+dependencies:
+  - defaults::python=3.6
