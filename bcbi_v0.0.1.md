@@ -7,7 +7,7 @@ Based on BCBI_v0.0.0. Adding support for [PredictMD.jl](https://github.com/bcbi/
 
 * [Set up environment](#set-up)
 	* [Create empty environment](#Create-Environment)
-	* [Install dependency libraries](#Dependencies)
+	* [Environment variables](#Environment-variables)
 	* [Julia](#julia)
 * Trouble shooting comments
 
@@ -19,9 +19,9 @@ Based on BCBI_v0.0.0. Adding support for [PredictMD.jl](https://github.com/bcbi/
 conda env create -f bcbi_v0.0.1.yml
 ```
 
-### Set up environment variables
+### Environment variables
 
-The following will add environment to conda's activate script.
+The following will add environment variables to conda's activate script.
 
 ```
 cd /opt/browncis/conda/envs/bcbi_v0.0.1/etc/conda/activate.d
@@ -38,7 +38,7 @@ source activate bcbi_v0.0.1
 
 :warning: Make sure environment variables are properly set up before activating the environment. And double check their paths after activating the environment
 
-### Set up Julia Packages
+### Julia
 
 #### Set up package directory
 
