@@ -72,7 +72,6 @@ Re-build in julia
 ```julia
 Pkg.build("Rmath")
 ````
-:exclamation: Rmath is needed by Gadfly and Lasso, thus it was pre-installed to apply the fix
 
 ##### HttpParser
 
