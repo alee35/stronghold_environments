@@ -2,7 +2,6 @@ name: bcbi_v0.0.1
 channels:
   - brown-data-science
   - r
-  - conda-forge
   - defaults
 dependencies:
   #System
@@ -20,7 +19,6 @@ dependencies:
   - defaults::pandas  
   - defaults::scikit-learn
   - defaults::statsmodels
-  - conda-forge::plotnine
   - brown-data-science::xgboost
   - defaults::spacy
   #R
