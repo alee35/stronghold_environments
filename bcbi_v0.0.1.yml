@@ -46,13 +46,4 @@ dependencies:
   - defaults::texlive-core
   - brown-data-science::predictmd-pdf2svg
 prefix: /opt/browncis/conda/envs/bcbi_v0.0.1
-environment:
-    LD_LIBRARY_PATH:
-    - $PREFIX/lib
-    JULIA_PKGDIR:
-    - $PREFIX/lib/julia/packages
-    PYTHON:
-    - $PREFIX/bin/python
-    CONDA_JL_HOME:
-    - $PREFIX/lib/julia/packages/v0.6/Conda/deps/usr
 
