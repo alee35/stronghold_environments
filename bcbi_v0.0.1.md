@@ -9,8 +9,8 @@ Based on BCBI_v0.0.0. Adding support for [PredictMD.jl](https://github.com/bcbi/
 	* [Create empty environment](#Create-Environment)
 	* [Environment variables](#Environment-variables)
 	* [Julia](#julia)
-* Trouble shooting comments
-
+	* [Deploy](#Deploy)
+	
 ## Set up
 
 ### Create environment from YML
@@ -105,6 +105,20 @@ install_all()
 check_installed()
 ```
 
+:warning: The previous procedure may fail sometimes - you can rstart julia and try individually
+
+```
+add(base_pkgs)
+add(plotting_pkgs)
+add(datasets_pkg)
+add(external_pkgs)
+clone(clone_pkgs)
+```
+
+#### Deploy
+
+##### Julia dependancies hack
+
 :warning: In the build server, "/opt/browncis/conda" is a sym-link tp "/opt/conda". All packages that use BinDeps.jl will write
 a deps.jl file pointing to the later path. However, in the workstations only "/opt/browncis/conda" exists. Therefore, we run the following post-process command included in `postprocess_julia_deps.sh` to change all paths encountered in relevant files
 
@@ -112,3 +126,35 @@ a deps.jl file pointing to the later path. However, in the workstations only "/o
 find $JULIA_PKGDIR/v0.6 -name "deps.jl" -type f -exec sed -i "s+/opt/conda/envs/$CONDA_DEFAULT_ENV+/opt/browncis/conda/envs/$CONDA_DEFAULT_ENV+g" {} +
 ```
 
+
+##### Register PyModule 
+
+On `pswbuild6cit` edit file `/opt/browncis/conda/conda` 
+
+##### Update the pymodules database: 
+
+On `pswbuild6cit`
+
+```
+moduledb insert -f /opt/browncis/conda/conda
+``` 
+
+##### Sync environments and pymodules database. 
+
+This may take a while
+
+ ```
+ ssh user@admin.stronghold.brown.edu
+ ssh software-ws
+ #(software-ws may time out before sync is complete)
+ screen -S sync_name 
+ #sync environment and pymodule settings
+ sudo condasync; sudo swsync
+ ```
+
+##### Load in workstation
+
+Confirm/load your module in stronghold workstation 
+
+* List: `module avail`
+* Load: `module load conda/env_name`
