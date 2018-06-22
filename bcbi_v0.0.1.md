@@ -102,17 +102,22 @@ Pkg.checkout("BCBI_base", "bcbi_v0.0.1")
 using BCBI_base
 
 install_all()
+```
+
+```julia
+BCBI_base.add(BCBI_base.base_pkgs)
+BCBI_base.add(BCBI_base.plotting_pkgs)
+BCBI_base.add(BCBI_base.datasets_pkg)
+BCBI_base.add(BCBI_base.external_pkgs)
+BCBI_base.clone(BCBI_base.clone_pkgs)
+Pkg.checkout("PredictMD", "master")
+quit()
+```
+
+```julia
+using PredictMD
 check_installed()
-```
 
-:warning: The previous procedure may fail sometimes - you can rstart julia and try individually
-
-```
-add(base_pkgs)
-add(plotting_pkgs)
-add(datasets_pkg)
-add(external_pkgs)
-clone(clone_pkgs)
 ```
 
 #### Deploy
@@ -126,7 +131,11 @@ a deps.jl file pointing to the later path. However, in the workstations only "/o
 find $JULIA_PKGDIR/v0.6 -name "deps.jl" -type f -exec sed -i "s+/opt/conda/envs/$CONDA_DEFAULT_ENV+/opt/browncis/conda/envs/$CONDA_DEFAULT_ENV+g" {} +
 ```
 
+Double check (should return nothing)
 
+```
+find $JULIA_PKGDIR/v0.6 -name "deps.jl" -type f -exec grep -l "/opt/conda/envs/$CONDA_DEFAULT_ENV" {} +
+```
 ##### Register PyModule 
 
 On `pswbuild6cit` edit file `/opt/browncis/conda/conda` 
