@@ -5,11 +5,13 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+  #System
   - defaults::python=3.6
   - defaults::gcc
   - defaults::libgcc
   - defaults::git
   - defaults::hdf5
+  #Python
   - defaults::numpy
   - defaults::scipy
   - defaults::matplotlib
@@ -19,8 +21,9 @@ dependencies:
   - defaults::scikit-learn
   - defaults::statsmodels
   - conda-forge::plotnine
-  - conda-forge::xgboost
-  - conda-forge::spacy
+  - brown-data-science::xgboost
+  - defaults::spacy
+  #R
   - r::r-base=3.4.3
   - r::r-caret
   - r::r-randomforest
@@ -36,7 +39,12 @@ dependencies:
   - r::r-car 
   - r::r-lubridate 
   - r::r-rmysql
+  #Julia
   - brown-data-science::julia=0.6.2
+  #PredictMD
+  - brown-data-science::imagemagick
+  - defaults::texlive-core
+  - brown-data-science::predictmd-pdf2svg
 prefix: /opt/browncis/conda/envs/bcbi_v0.0.1
 environment:
     LD_LIBRARY_PATH:
