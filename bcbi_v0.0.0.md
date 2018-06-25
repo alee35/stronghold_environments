@@ -14,7 +14,7 @@ This is BCBI's base environment. It was created from scratch
 
 ## Set up
 
-The environment was created and set up in pswbuild6cit.services.brown.edu
+The environment was created and set up in *the build server*
 
 ### Create Environment
 ```
@@ -22,7 +22,7 @@ conda create --name bcbi_v0.0.0 python=3.6
 source activate bcbi_v0.0.0
 ```
 
-### System Basics: 
+### System Basics:
 ```
 conda install gcc git hdf5
 ```
@@ -59,7 +59,7 @@ conda install -c r r-caret r-randomforest r-lme4 r-dplyr r-data.table r-ggplot2 
 conda install julia -c brown-data-science
 ```
 
-### Setup Julia environment variables 
+### Setup Julia environment variables
 
 * Create a script that is read by `conda activate`
 
@@ -73,7 +73,7 @@ conda install julia -c brown-data-science
 	```
 	export LD_LIBRARY_PATH = /opt/browncis/conda/envs/$CONDA_DEFAULT_ENV/lib
 	```
-	2. `JULIA_PKGDIR`: Where all julia packages are downloaded to 
+	2. `JULIA_PKGDIR`: Where all julia packages are downloaded to
 	```
 	export JULIA_PKGDIR = /opt/browncis/conda/envs/$CONDA_DEFAULT_ENV/lib/julia/packages
 	```
@@ -82,7 +82,7 @@ conda install julia -c brown-data-science
 	```
 	export PYTHON = /opt/browncis/conda/envs/$CONDA_DEFAULT_ENV/bin/python
 	```
-	4. `CONDA_JL_HOME`: Where Conda lives 
+	4. `CONDA_JL_HOME`: Where Conda lives
 	```
 	export CONDA_JL_HOME = /opt/browncis/conda/envs/$CONDA_DEFAULT_ENV/lib/julia/packages/v0.6/Conda/deps/usr
 	```  
@@ -96,11 +96,11 @@ conda install julia -c brown-data-science
 	set JULIA_PKGDIR = %(rootdir)s/lib/julia/packages
 	set JAVA_HOME = %(rootdir)s
 	set PYTHON_DIR = %(rootdir)s/bin
-	set PYTHON = %(rootdir)s/bin/python 
+	set PYTHON = %(rootdir)s/bin/python
 	set CONDA_JL_HOME = %(rootdir)s/lib/julia/packages/v0.6/Conda/deps/usr
 	set LD_LIBRARY_PATH = %(rootdir)s/lib
 	```
-	
+
 ### Init Julia's package directory
 
 In julia's REPL
@@ -109,8 +109,6 @@ Pkg.dir() #confirm location
 Pkg.init()
 ```  
 
-### Install BCBI's packages 
+### Install BCBI's packages
 
 Follow [BCBI instructions](https://github.com/bcbi/BCBI_base.jl) and remember to refer to the appropiate tag.
-
-

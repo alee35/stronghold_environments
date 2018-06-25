@@ -10,7 +10,7 @@ Based on BCBI_v0.0.0. Adding support for [PredictMD.jl](https://github.com/bcbi/
 	* [Environment variables](#Environment-variables)
 	* [Julia](#julia)
 	* [Deploy](#Deploy)
-	
+
 ## Set up
 
 ### Create environment from YML
@@ -64,7 +64,7 @@ Pkg.add("Rmath")
 :warning: Precompiling package will throw an error. A temporary fix, which is mentioned [here](https://github.com/JuliaStats/Rmath.jl/issues/40) is to run
 
 ```bash
-make -C $JULIA_PKGDIR/v0.6/Rmath/deps/src/Rmath-julia-0.2.0/ CFLAGS=-v 
+make -C $JULIA_PKGDIR/v0.6/Rmath/deps/src/Rmath-julia-0.2.0/ CFLAGS=-v
 ```
 
 Re-build in julia
@@ -136,34 +136,34 @@ Double check (should return nothing)
 ```
 find $JULIA_PKGDIR/v0.6 -name "deps.jl" -type f -exec grep -l "/opt/conda/envs/$CONDA_DEFAULT_ENV" {} +
 ```
-##### Register PyModule 
+##### Register PyModule
 
-On `pswbuild6cit` edit file `/opt/browncis/conda/conda` 
+On `pswbuild6cit` edit file `/opt/browncis/conda/conda`
 
-##### Update the pymodules database: 
+##### Update the pymodules database:
 
 On `pswbuild6cit`
 
 ```
 moduledb insert -f /opt/browncis/conda/conda
-``` 
+```
 
-##### Sync environments and pymodules database. 
+##### Sync environments and pymodules database.
 
 This may take a while
 
  ```
- ssh user@admin.stronghold.brown.edu
- ssh software-ws
+ ssh admin server
+ ssh software server
  #(software-ws may time out before sync is complete)
- screen -S sync_name 
+ screen -S sync_name
  #sync environment and pymodule settings
  sudo condasync; sudo swsync
  ```
 
 ##### Load in workstation
 
-Confirm/load your module in stronghold workstation 
+Confirm/load your module in stronghold workstation
 
 * List: `module avail`
 * Load: `module load conda/env_name`
