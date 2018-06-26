@@ -140,11 +140,11 @@ find $JULIA_PKGDIR/v0.6 -name "deps.jl" -type f -exec grep -l "/opt/conda/envs/$
 ```
 ##### Register PyModule
 
-On `pswbuild6cit` edit file `/opt/browncis/conda/conda`
+On `build server` edit file `/opt/browncis/conda/conda`
 
 ##### Update the pymodules database:
 
-On `pswbuild6cit`
+On `build server`
 
 ```
 moduledb insert -f /opt/browncis/conda/conda
