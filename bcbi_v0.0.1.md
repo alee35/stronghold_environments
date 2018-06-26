@@ -8,8 +8,8 @@ Based on BCBI_v0.0.0. Adding support for [PredictMD.jl](https://github.com/bcbi/
 * [Set up environment](#set-up)
 	* [Create empty environment](#Create-Environment)
 	* [Environment variables](#Environment-variables)
-	* [Julia](#julia)
-	* [Deploy](#Deploy)
+* [Julia](#julia)
+* [Deploy](#Deploy)
 
 ## Set up
 
