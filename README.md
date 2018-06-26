@@ -9,7 +9,9 @@ Documentation of steps followed to build/install packages in stronghold environm
   * [Deploying evironments a.k.a sync to workstations](#deploy-environment)
   * [Pymodule on workstations](#pymodules)
 * Environments
-  * [bcbi_v0.0.0](https://github.com/brown-data-science/stronghold_environments/blob/master/bcbi_v0.0.0.md)
+  * BCBI
+    * [bcbi_v0.0.1](https://github.com/brown-data-science/stronghold_environments/blob/master/bcbi_v0.0.1.md)
+    * [bcbi_v0.0.0](https://github.com/brown-data-science/stronghold_environments/blob/master/bcbi_v0.0.0.md)
 
 ## Conda commands
 
