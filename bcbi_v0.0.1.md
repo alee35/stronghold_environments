@@ -15,6 +15,8 @@ Based on BCBI_v0.0.0. Adding support for [PredictMD.jl](https://github.com/bcbi/
 
 ### Create environment from YML
 
+Use [configuration file](https://github.com/brown-data-science/stronghold_environments/edit/master/bcbi_v0.0.1.yml) to install at creation as many packages as possible. This way Conda can better resolve the environment, instead of installing one at a time.  
+
 ```
 conda env create -f bcbi_v0.0.1.yml
 ```
