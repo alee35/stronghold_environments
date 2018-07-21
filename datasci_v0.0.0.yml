@@ -1,0 +1,26 @@
+name: datasci_v0.0.0
+channels:
+  - brown-data-science
+  - defaults
+  - conda-forge
+dependencies:
+  #System
+  - defaults::python=3.6
+  - defaults::git
+  - defaults::hdf5
+  #Python
+  - defaults::numpy
+  - defaults::scipy
+  - defaults::matplotlib
+  - defaults::jupyter
+  - defaults::pandas  
+  - defaults::scikit-learn
+  - defaults::statsmodels
+  - conda-forge::xgboost
+  - conda-forge::tsfresh
+  - defaults::natsort
+  - defaults::nltk
+  - defaults::spacy
+  - defaults::seaborn
+prefix: /opt/browncis/conda/envs/datasci_v0.0.0
+
