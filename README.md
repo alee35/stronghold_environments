@@ -18,7 +18,8 @@ Documentation of steps followed to build/install packages in stronghold environm
 
 * List environments: `conda info --envs`
 * List all packages in env with name `myenv`: `conda list -n myenv`
-* Create environment with name `myenv` and specify python version: `conda create -n myenv python=3.4`
+* Create environment with name `myenv` and specify python version: `conda env create -n myenv python=3.4`
+* Create environment from yaml file: `conda env create -n myenv -f myenv.yml`
 * Clone a previous environment: `conda create --name bcbi_v0.0.2 --clone bcbi_v0.0.1`
 * Activate environments: `source activate bcbi_v0.0.2`
 * Deactivate: `source deactivate`
